@@ -152,18 +152,7 @@ namespace JASONParser
             }
             return n;
         }
-        //public static Node MainFunc()
-        //{
-        //    Node n = new Node("MainFunc");
 
-        //    if (currenttokens[i].token_type == Token_Class.Integer || currenttokens[i].token_type == Token_Class.String || currenttokens[i].token_type == Token_Class.Float)
-        //    {
-        //        n.children.Add(Datatype());
-        //        n.children.Add(match(Token_Class.Main));
-        //        n.children.Add(FuncBody());
-        //    }
-        //    return n;
-        //}
         public static Node FuncDec()
         {
             Node n = new Node("FuncDec");
@@ -266,18 +255,7 @@ namespace JASONParser
             }
             return n;
         }
-        //public static Node StatmentsDash()
-        //{
-        //    Node n = new Node("StatmentsDash");
-        //    if (currenttokens[i].token_type == Token_Class.Semicolon)
-        //    {
-        //        n.children.Add(match(Token_Class.Semicolon));
-        //        n.children.Add(Statment());
-        //        n.children.Add(StatmentsDash());
-        //    }
-        //    return n;
 
-        //}
         public static Node Statment()
         {
             Node nn = new Node("Statment");
@@ -379,48 +357,7 @@ namespace JASONParser
             n.children.Add(match(Token_Class.Idenifier));
             return n;
         }
-        //public static Node ElseIf()
-        //{
-        //    Node n = new Node("ElseIf");
-        //    n.children.Add(match(Token_Class.ElseIf));
-        //    n.children.Add(ElseIfdash());
-        //    return n;
-
-        //}
-        //public static Node ElseIfdash()
-        //{
-        //    Node n = new Node("ElseIfdash");
-        //    n.children.Add(ElseIfdash2());
-        //    n.children.Add(ElseIfdash3());
-        //    return n;
-
-        //}
-
-        //public static Node ElseIfdash2()
-        //{
-        //    Node n = new Node("ElseIfdash2");
-        //    n.children.Add(Condition());
-        //    n.children.Add(match(Token_Class.Then));
-        //    n.children.Add(Statments());
-        //    return n;
-
-        //}
-        //public static Node ElseIfdash3()
-        //{
-        //    Node n = new Node("ElseIfdash3");
-        //    if (currenttokens[i].token_type == Token_Class.ElseIf)
-        //    {
-        //        n.children.Add(ElseIf());
-        //    }
-        //    else if (currenttokens[i].token_type == Token_Class.Else)
-        //    {
-        //        n.children.Add(match(Token_Class.Else));
-        //        n.children.Add(Statments());
-        //    }
-
-
-        //    return n;
-        //}
+  
         public static Node IfStat()
         {
             Node n = new Node("IfStat");
@@ -504,45 +441,7 @@ namespace JASONParser
             return n;
         }
 
-        //public static Node IfStat()
-        //{
-
-        //    Node n = new Node("IfStat");
-        //    n.children.Add(match(Token_Class.If));
-        //    n.children.Add(IfStatdash());
-        //    return n;
-
-        //}
-        //public static Node IfStatdash()
-        //{
-        //    Node n = new Node("IfStatdash");
-        //    n.children.Add(IfStatdash2());
-        //    n.children.Add(IfStatdash3());
-        //    return n;
-
-        //}
-
-        //public static Node IfStatdash2()
-        //{
-        //    Node n = new Node("IfStatdash2");
-        //    n.children.Add(Condition());
-        //    n.children.Add(match(Token_Class.Then));
-        //    n.children.Add(Statments());
-        //    return n;
-        //}
-        //public static Node IfStatdash3()
-        //{
-        //    Node n = new Node("IfStatdash3");
-        //    if (currenttokens[i].token_type == Token_Class.ElseIf)
-        //    {
-        //        n.children.Add(ElseIf());
-        //    }
-        //    else if (currenttokens[i].token_type == Token_Class.Else)
-        //    {
-        //        n.children.Add(match(Token_Class.Else));
-        //    }
-        //    return n;
-        //}
+       
         public static Node BoolOp()
         {
             Node n = new Node("BoolOp");
@@ -589,35 +488,7 @@ namespace JASONParser
             }
             return n;
         }
-        //public static Node Declist()
-        //{
-        //    Node n = new Node("Declist");
-        //    n.children.Add(match(Token_Class.Idenifier));
-        //    n.children.Add(Declistdash());
-
-        //    return n;
-        //}
-        //public static Node Declistdash()
-        //{
-        //    if (currenttokens[i].token_type == Token_Class.Comma)
-        //    {
-
-        //        Node n = new Node("Declist");
-        //        n.children.Add(match(Token_Class.Comma));
-        //        n.children.Add(match(Token_Class.Idenifier));
-        //        n.children.Add(Declistdash());
-        //        return n;
-        //    }
-        //    else
-        //    {
-        //        Node n = new Node();
-        //        n = null;
-        //        return n;
-        //    }
-
-        //}
-        //===================Ayman Part============================
-        //=========================================================
+        
         public static Node WriteStat()
         {
             Node n = new Node("WriteStat");
@@ -672,8 +543,6 @@ namespace JASONParser
                 n.children.Add(ExpDash());
             }
             
-            //================================================================
-            //================================================================
             else if (currenttokens[i].token_type == Token_Class.PlusOp || currenttokens[i].token_type == Token_Class.MinusOp || currenttokens[i].token_type == Token_Class.MultiplyOp || currenttokens[i].token_type == Token_Class.DivideOp)
             {
                 n.children.Add((AriOp()));
